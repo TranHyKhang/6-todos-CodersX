@@ -1,5 +1,15 @@
 h1 TODO list
 a(href="/create") New
+form(action="/search", method="GET")
+    input(type="text", name="q")
+    button Search
 ul  
     each item in todos 
-        li= item.text
+        li
+            span= item.text
+            span &nbsp
+            a(href='/' + item.id) view
+            span &nbsp
+            a(href="/" +item.id + "/delete") Delete
+
+a(href="/") Back
